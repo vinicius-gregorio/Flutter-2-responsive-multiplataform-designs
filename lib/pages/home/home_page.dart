@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_test/pages/home/components/appbar/mobile_appbar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,10 +9,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.tealAccent,
-      ),
-    );
+    return LayoutBuilder(builder: (context, constraints) {
+      print(constraints.maxWidth);
+      return Scaffold(
+        appBar: constraints.maxWidth < 800
+            ? PreferredSize(
+                child: MobileAppBar(), preferredSize: Size(double.infinity, 56))
+            : AppBar(),
+      );
+    });
   }
 }
