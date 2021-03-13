@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_test/pages/home/components/appbar/mobile_appbar.dart';
 
+import 'components/appbar/web_appbar.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -12,10 +14,12 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       print(constraints.maxWidth);
       return Scaffold(
+        drawer: Drawer(),
         appBar: constraints.maxWidth < 800
             ? PreferredSize(
                 child: MobileAppBar(), preferredSize: Size(double.infinity, 56))
-            : AppBar(),
+            : PreferredSize(
+                child: WebAppBar(), preferredSize: Size(double.infinity, 72)),
       );
     });
   }

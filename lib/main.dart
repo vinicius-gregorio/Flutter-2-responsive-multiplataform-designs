@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_test/pages/pages.dart';
+import 'package:responsive_test/pages/home/home_page.dart';
 
 void main() {
   runApp(MyApp());
