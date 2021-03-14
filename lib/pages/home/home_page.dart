@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_test/config/breakpoints.dart';
 import 'package:responsive_test/pages/home/components/appbar/mobile_appbar.dart';
+import 'package:responsive_test/pages/home/components/header.dart';
 
 import 'components/appbar/web_appbar.dart';
 
@@ -20,6 +21,16 @@ class _HomePageState extends State<HomePage> {
                 child: MobileAppBar(), preferredSize: Size(double.infinity, 56))
             : PreferredSize(
                 child: WebAppBar(), preferredSize: Size(double.infinity, 72)),
+        body: Align(
+          alignment: Alignment.topCenter,
+          child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 1400),
+              child: ListView(
+                children: [
+                  Header(),
+                ],
+              )),
+        ),
       );
     });
   }
