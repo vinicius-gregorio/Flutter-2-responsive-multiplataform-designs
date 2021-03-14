@@ -24,6 +24,7 @@ class WebAppBarResponsiveContent extends StatelessWidget {
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Pesquisar',
+                        isCollapsed: true,
                       ),
                     ),
                   )
@@ -31,6 +32,23 @@ class WebAppBarResponsiveContent extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            width: 8,
+          ),
+          if (constraints.maxWidth >= 400)
+            TextButton(
+              onPressed: () {},
+              child: Text('Aprender'),
+            ),
+          if (constraints.maxWidth >= 500) ...[
+            SizedBox(
+              width: 16,
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('Observar'),
+            ),
+          ]
         ],
       );
     }));

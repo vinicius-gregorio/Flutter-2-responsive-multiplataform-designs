@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_test/config/breakpoints.dart';
 import 'package:responsive_test/pages/home/components/appbar/mobile_appbar.dart';
 
 import 'components/appbar/web_appbar.dart';
@@ -12,10 +13,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      print(constraints.maxWidth);
       return Scaffold(
-        drawer: Drawer(),
-        appBar: constraints.maxWidth < 800
+        drawer: constraints.maxWidth < mobileBreakpoints ? Drawer() : null,
+        appBar: constraints.maxWidth < mobileBreakpoints
             ? PreferredSize(
                 child: MobileAppBar(), preferredSize: Size(double.infinity, 56))
             : PreferredSize(
