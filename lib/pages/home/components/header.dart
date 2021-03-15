@@ -55,7 +55,44 @@ class Header extends StatelessWidget {
                 ],
               ));
         }
-        return Container();
+        return Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 3.4,
+              child: Image.network(
+                backgroundImage,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Aprenda Flutter com este curso',
+                    style: TextStyle(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    'Aprenda Flutter com este curso, eh muito brabo mano seloco vc nao faz ideia tem muita coisa legal',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                  SizedBox(height: 16),
+                  CustomSearchField(),
+                ],
+              ),
+            )
+          ],
+        );
       },
     );
   }

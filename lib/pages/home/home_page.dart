@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
+        backgroundColor: Colors.black,
         drawer: constraints.maxWidth < mobileBreakpoints ? Drawer() : null,
         appBar: constraints.maxWidth < mobileBreakpoints
             ? PreferredSize(
